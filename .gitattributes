@@ -1,0 +1,5 @@
+# 生成物用 LF，避免 Windows checkout 后 sync.mjs 误判全部章节“有变化”
+* text=auto eol=lf
+*.png binary
+*.jpg binary
+*.woff2 binary

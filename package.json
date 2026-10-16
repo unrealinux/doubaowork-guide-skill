@@ -1,0 +1,51 @@
+{
+  "name": "doubaowork-guide-skill",
+  "version": "1.0.0",
+  "description": "把《豆包工作蓝皮书》（AlephAITech/DoubaoWorkGuide，MIT，50 篇正文）打包成本地 Agent Skill：SKILL.md 只做意图路由，正文按需加载，附增量同步脚本。",
+  "license": "MIT",
+  "author": "unrealinux",
+  "keywords": [
+    "pi-package",
+    "pi",
+    "agent-skill",
+    "skill",
+    "doubao",
+    "doubao-work",
+    "豆包工作",
+    "doubaowork"
+  ],
+  "pi": {
+    "skills": [
+      "./skills"
+    ]
+  },
+  "files": [
+    "skills/",
+    "scripts/",
+    "packaging/",
+    "README.md",
+    "CHANGELOG.md",
+    "NOTICE.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "check": "node scripts/check-version.mjs",
+    "zip": "node scripts/build-zip.mjs",
+    "zip:skillpay": "node scripts/build-zip.mjs --flat",
+    "release": "npm run check && npm run zip && npm run zip:skillpay",
+    "sync": "node skills/doubaowork-guide/scripts/sync.mjs",
+    "sync:check": "node skills/doubaowork-guide/scripts/sync.mjs --check",
+    "prepack": "node scripts/check-version.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/unrealinux/doubaowork-guide-skill.git"
+  },
+  "bugs": {
+    "url": "https://github.com/unrealinux/doubaowork-guide-skill/issues"
+  },
+  "homepage": "https://github.com/unrealinux/doubaowork-guide-skill#readme"
+}
